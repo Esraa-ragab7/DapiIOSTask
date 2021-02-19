@@ -61,19 +61,59 @@
 		F21E05BF25E05ACB00E1C251 /* DapiIOSTask */ = {
 			isa = PBXGroup;
 			children = (
+				F21E05DE25E05B2400E1C251 /* AppDelegate+Delegates */,
+				F21E05DD25E05B2100E1C251 /* Modal */,
+				F21E05DC25E05B1E00E1C251 /* View */,
+				F21E05DB25E05B1C00E1C251 /* Controller */,
+				F21E05DA25E05B1100E1C251 /* Resources */,
+			);
+			path = DapiIOSTask;
+			sourceTree = "<group>";
+		};
+		F21E05DA25E05B1100E1C251 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F21E05CC25E05ACC00E1C251 /* Assets.xcassets */,
+				F21E05D125E05ACC00E1C251 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F21E05DB25E05B1C00E1C251 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F21E05C625E05ACB00E1C251 /* ViewController.h */,
+				F21E05C725E05ACB00E1C251 /* ViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F21E05DC25E05B1E00E1C251 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F21E05C925E05ACB00E1C251 /* Main.storyboard */,
+				F21E05CE25E05ACC00E1C251 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F21E05DD25E05B2100E1C251 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
+		F21E05DE25E05B2400E1C251 /* AppDelegate+Delegates */ = {
+			isa = PBXGroup;
+			children = (
 				F21E05C025E05ACB00E1C251 /* AppDelegate.h */,
 				F21E05C125E05ACB00E1C251 /* AppDelegate.m */,
 				F21E05C325E05ACB00E1C251 /* SceneDelegate.h */,
 				F21E05C425E05ACB00E1C251 /* SceneDelegate.m */,
-				F21E05C625E05ACB00E1C251 /* ViewController.h */,
-				F21E05C725E05ACB00E1C251 /* ViewController.m */,
-				F21E05C925E05ACB00E1C251 /* Main.storyboard */,
-				F21E05CC25E05ACC00E1C251 /* Assets.xcassets */,
-				F21E05CE25E05ACC00E1C251 /* LaunchScreen.storyboard */,
-				F21E05D125E05ACC00E1C251 /* Info.plist */,
 				F21E05D225E05ACC00E1C251 /* main.m */,
 			);
-			path = DapiIOSTask;
+			path = "AppDelegate+Delegates";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
