@@ -14,6 +14,8 @@
 		F21E05CD25E05ACC00E1C251 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F21E05CC25E05ACC00E1C251 /* Assets.xcassets */; };
 		F21E05D025E05ACC00E1C251 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F21E05CE25E05ACC00E1C251 /* LaunchScreen.storyboard */; };
 		F21E05D325E05ACC00E1C251 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F21E05D225E05ACC00E1C251 /* main.m */; };
+		F21E05E425E05C9A00E1C251 /* SiteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F21E05E225E05C9A00E1C251 /* SiteTableViewCell.m */; };
+		F21E05E525E05C9A00E1C251 /* SiteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F21E05E325E05C9A00E1C251 /* SiteTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,9 @@
 		F21E05CF25E05ACC00E1C251 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F21E05D125E05ACC00E1C251 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F21E05D225E05ACC00E1C251 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F21E05E125E05C9A00E1C251 /* SiteTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SiteTableViewCell.h; sourceTree = "<group>"; };
+		F21E05E225E05C9A00E1C251 /* SiteTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SiteTableViewCell.m; sourceTree = "<group>"; };
+		F21E05E325E05C9A00E1C251 /* SiteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SiteTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +96,7 @@
 		F21E05DC25E05B1E00E1C251 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F21E05E025E05C7F00E1C251 /* TableViewCell */,
 				F21E05C925E05ACB00E1C251 /* Main.storyboard */,
 				F21E05CE25E05ACC00E1C251 /* LaunchScreen.storyboard */,
 			);
@@ -114,6 +120,16 @@
 				F21E05D225E05ACC00E1C251 /* main.m */,
 			);
 			path = "AppDelegate+Delegates";
+			sourceTree = "<group>";
+		};
+		F21E05E025E05C7F00E1C251 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				F21E05E125E05C9A00E1C251 /* SiteTableViewCell.h */,
+				F21E05E225E05C9A00E1C251 /* SiteTableViewCell.m */,
+				F21E05E325E05C9A00E1C251 /* SiteTableViewCell.xib */,
+			);
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +190,7 @@
 			files = (
 				F21E05D025E05ACC00E1C251 /* LaunchScreen.storyboard in Resources */,
 				F21E05CD25E05ACC00E1C251 /* Assets.xcassets in Resources */,
+				F21E05E525E05C9A00E1C251 /* SiteTableViewCell.xib in Resources */,
 				F21E05CB25E05ACB00E1C251 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -188,6 +205,7 @@
 				F21E05C825E05ACB00E1C251 /* ViewController.m in Sources */,
 				F21E05C225E05ACB00E1C251 /* AppDelegate.m in Sources */,
 				F21E05D325E05ACC00E1C251 /* main.m in Sources */,
+				F21E05E425E05C9A00E1C251 /* SiteTableViewCell.m in Sources */,
 				F21E05C525E05ACB00E1C251 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
