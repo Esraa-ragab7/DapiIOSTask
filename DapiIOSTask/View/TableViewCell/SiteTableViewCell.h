@@ -11,6 +11,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SiteTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *siteImageView;
+@property (weak, nonatomic) IBOutlet UILabel *siteTitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *siteContentLengthLabel;
+
+-(void) displayData:(NSString*)title contentLength:(NSString*) contentLength;
 @end
 
 NS_ASSUME_NONNULL_END

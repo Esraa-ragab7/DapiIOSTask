@@ -9,15 +9,12 @@
 
 @implementation SiteTableViewCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+-(void) displayData:(NSString*)title contentLength:(NSString*) contentLength {
+    [_siteTitleLabel setText:title];
+    [_siteContentLengthLabel setText:contentLength];
+    NSURL *url = [NSURL URLWithString:([NSString stringWithFormat:@"http://%@/favicon.ico",title])];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    _siteImageView.image = [UIImage imageWithData: data];
 }
 
 @end
