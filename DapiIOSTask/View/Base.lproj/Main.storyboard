@@ -33,7 +33,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6J7-J8-aQF">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="15" translatesAutoresizingMaskIntoConstraints="NO" id="6J7-J8-aQF">
                                         <rect key="frame" x="0.0" y="76.5" width="414" height="741.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <view key="tableHeaderView" contentMode="scaleToFill" id="G3g-Ur-Skk">
@@ -73,6 +73,11 @@
                                                 <constraint firstAttribute="bottom" secondItem="BDw-sN-uXs" secondAttribute="bottom" id="ySW-sr-KWA"/>
                                             </constraints>
                                         </view>
+                                        <view key="tableFooterView" contentMode="scaleToFill" id="hYV-IU-6eI">
+                                            <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        </view>
                                         <connections>
                                             <outlet property="dataSource" destination="BYZ-38-t0r" id="Cad-9r-oaK"/>
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="tQB-6Q-HXP"/>
@@ -107,7 +112,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7" y="93"/>
+            <point key="canvasLocation" x="-49.275362318840585" y="109.82142857142857"/>
         </scene>
     </scenes>
     <resources>
