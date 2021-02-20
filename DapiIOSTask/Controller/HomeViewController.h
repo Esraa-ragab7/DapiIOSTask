@@ -11,12 +11,16 @@
 
 @interface HomeViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
+// MARK:- Outlets
 @property (weak, nonatomic) IBOutlet UITableView *sitesTableView;
 
+// MARK:- Actions
+- (IBAction)startButtonAction:(UIButton *)sender;
+
+// MARK:- Propertires
 @property (nonatomic, strong) NSArray *urls;
 @property (nonatomic, strong) NSMutableArray *contentLength;
 
-- (IBAction)startButtonAction:(UIButton *)sender;
 
 @end
 
