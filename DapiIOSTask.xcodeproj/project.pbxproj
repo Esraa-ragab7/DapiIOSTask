@@ -87,6 +87,7 @@
 		F21E05DB25E05B1C00E1C251 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F2F109F325E12CAF0023DFCC /* HomeTableViewCell */,
 				F21E05C625E05ACB00E1C251 /* HomeViewController.h */,
 				F21E05C725E05ACB00E1C251 /* HomeViewController.m */,
 			);
@@ -96,7 +97,7 @@
 		F21E05DC25E05B1E00E1C251 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F21E05E025E05C7F00E1C251 /* TableViewCell */,
+				F21E05E025E05C7F00E1C251 /* HomeTableViewCell */,
 				F21E05C925E05ACB00E1C251 /* Main.storyboard */,
 				F21E05CE25E05ACC00E1C251 /* LaunchScreen.storyboard */,
 			);
@@ -122,14 +123,21 @@
 			path = "AppDelegate+Delegates";
 			sourceTree = "<group>";
 		};
-		F21E05E025E05C7F00E1C251 /* TableViewCell */ = {
+		F21E05E025E05C7F00E1C251 /* HomeTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				F21E05E325E05C9A00E1C251 /* SiteTableViewCell.xib */,
+			);
+			path = HomeTableViewCell;
+			sourceTree = "<group>";
+		};
+		F2F109F325E12CAF0023DFCC /* HomeTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
 				F21E05E125E05C9A00E1C251 /* SiteTableViewCell.h */,
 				F21E05E225E05C9A00E1C251 /* SiteTableViewCell.m */,
-				F21E05E325E05C9A00E1C251 /* SiteTableViewCell.xib */,
 			);
-			path = TableViewCell;
+			path = HomeTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
