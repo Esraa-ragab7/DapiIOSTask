@@ -11,10 +11,17 @@
 
 -(void) displayData:(NSString*)title contentLength:(NSString*) contentLength {
     [_siteTitleLabel setText:title];
-    [_siteContentLengthLabel setText:contentLength];
-    NSURL *url = [NSURL URLWithString:([NSString stringWithFormat:@"http://%@/favicon.ico",title])];
-    NSData *data = [NSData dataWithContentsOfURL:url];
-    _siteImageView.image = [UIImage imageWithData: data];
+    if ([contentLength isEqualToString:@""]) {
+        [_siteContentLengthLabel setHidden:YES];
+        [_siteImageView setHidden:YES];
+    } else {
+        [_siteContentLengthLabel setHidden:NO];
+        [_siteImageView setHidden:NO];
+        [_siteContentLengthLabel setText:contentLength];
+        NSURL *url = [NSURL URLWithString:([NSString stringWithFormat:@"http://%@/favicon.ico",title])];
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        _siteImageView.image = [UIImage imageWithData: data];
+    }
 }
 
 @end
