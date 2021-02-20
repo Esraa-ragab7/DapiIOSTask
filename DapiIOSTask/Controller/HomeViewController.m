@@ -28,6 +28,7 @@
     return _contentLength;
 }
 
+// MARK:- ViewController Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self urls];
@@ -35,11 +36,54 @@
     [_sitesTableView registerNib:[UINib nibWithNibName:@"SiteTableViewCell" bundle:nil] forCellReuseIdentifier:@"SiteTableViewCell"];
 }
 
-
+// MARK: - Button Actions
 - (IBAction)startButtonAction:(UIButton *)sender {
-    NSLog(@"test 1 2 3");
+    [sender setHidden:YES];
+    
+    // semaphore control concurrency in our app by allowing us to lock n number of threads.
+    NSInteger kMaxConcurrent = 1;
+    dispatch_semaphore_t sema = dispatch_semaphore_create(kMaxConcurrent);
+    dispatch_queue_t queue = dispatch_queue_create("queue", DISPATCH_QUEUE_CONCURRENT);
+    
+    for(NSInteger i=0 ; i < _urls.count ; i++){
+        dispatch_async(queue, ^{
+            // Lock shared resource access
+            dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+            [self callApi:i completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                [self changeContentLength:(NSHTTPURLResponse *) response index:i];
+                // Update the UI on the main thread
+                dispatch_sync(dispatch_get_main_queue(),^{
+                    [self->_sitesTableView reloadData];
+                    [self->_sitesTableView layoutIfNeeded];
+                    // Release the lock
+                    dispatch_semaphore_signal(sema);
+                });
+            }];
+        });
+    }
 }
 
+-(void)changeContentLength:(NSHTTPURLResponse*)httpResponse index:(NSInteger)index{
+    long statusCode = (long)[httpResponse statusCode];
+    if (statusCode > 199 && statusCode < 300) {
+        [self->_contentLength replaceObjectAtIndex:index withObject:[NSByteCountFormatter stringFromByteCount:httpResponse.expectedContentLength countStyle:NSByteCountFormatterCountStyleBinary]];
+    } else {
+        [self->_contentLength replaceObjectAtIndex:index withObject:[NSString stringWithFormat:@"%ld", statusCode]];
+    }
+}
+
+-(void)callApi:(NSInteger)index completionHandler:(void (^)(NSData *data, NSURLResponse *response, NSError *error))completionHandler{
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
+
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://%@", self->_urls[index]]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+    
+    NSURLSessionDataTask *data = [session dataTaskWithRequest:request completionHandler:completionHandler];
+    [data resume];
+}
+
+// MARK:- TableView DataSource Methods
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     NSString *identifier = @"SiteTableViewCell";
     SiteTableViewCell *cell = [_sitesTableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
@@ -50,6 +94,5 @@
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return _urls.count;
 }
-
 
 @end
