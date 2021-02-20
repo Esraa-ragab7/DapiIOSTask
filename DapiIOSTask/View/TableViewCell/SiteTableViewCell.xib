@@ -43,6 +43,9 @@
                                 </subviews>
                             </stackView>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="gPa-GG-gKv"/>
+                        </constraints>
                     </stackView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TOL-zE-MsM">
                         <rect key="frame" x="60" y="69" width="514" height="1"/>

@@ -18,9 +18,13 @@
         [_siteContentLengthLabel setHidden:NO];
         [_siteImageView setHidden:NO];
         [_siteContentLengthLabel setText:contentLength];
-        NSURL *url = [NSURL URLWithString:([NSString stringWithFormat:@"http://%@/favicon.ico",title])];
-        NSData *data = [NSData dataWithContentsOfURL:url];
-        _siteImageView.image = [UIImage imageWithData: data];
+        if(![contentLength containsString:@"B"] && ![contentLength containsString:@"b"]) {
+            _siteImageView.image = [UIImage imageNamed:@"failure-icon"];
+        } else {
+            NSURL *url = [NSURL URLWithString:([NSString stringWithFormat:@"https://%@/favicon.ico",title])];
+            NSData *data = [NSData dataWithContentsOfURL:url];
+            _siteImageView.image = [UIImage imageWithData: data];
+        }
     }
 }
 
