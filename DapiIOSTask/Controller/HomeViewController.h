@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *sitesTableView;
 
 @property (nonatomic, strong) NSArray *urls;
+@property (nonatomic, strong) NSMutableArray *contentLength;
 
 - (IBAction)startButtonAction:(UIButton *)sender;
 

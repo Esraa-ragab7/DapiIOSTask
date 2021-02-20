@@ -20,9 +20,18 @@
     return _urls;
 }
 
+- (NSMutableArray *)contentLength {
+    if (!_contentLength) {
+        _contentLength = [[NSMutableArray alloc] init];
+        [_contentLength addObjectsFromArray:@[@"", @"", @"", @"", @"", @"", @"", @""]];
+    }
+    return _contentLength;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self urls];
+    [self contentLength];
     [_sitesTableView registerNib:[UINib nibWithNibName:@"SiteTableViewCell" bundle:nil] forCellReuseIdentifier:@"SiteTableViewCell"];
 }
 
@@ -34,7 +43,7 @@
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     NSString *identifier = @"SiteTableViewCell";
     SiteTableViewCell *cell = [_sitesTableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
-    [cell displayData:_urls[indexPath.row] contentLength:@""];
+    [cell displayData:_urls[indexPath.row] contentLength:[_contentLength objectAtIndex:indexPath.row]];
     return cell;
 }
 
